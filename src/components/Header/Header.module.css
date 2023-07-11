@@ -1,0 +1,32 @@
+.header{
+  min-height: 80px;
+  min-width: 680px;
+  margin-right:50px;
+  margin-left:50px;
+  margin-top:25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 55px;
+  letter-spacing: 1.2px;
+  background-color: #003668;
+  color: white;
+  border-radius: 15px;
+  position: relative;
+}
+
+.header__btn-logout{
+  padding: 5px;
+  color: white;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid white;
+  position: absolute;
+  right: 10px;
+}
+
+.logo-header{
+  width: 100px;
+  position: absolute;
+  left: 25px;
+  top: 14px;
+}

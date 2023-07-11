@@ -1,0 +1,40 @@
+.loggingform__remember-wrapper {
+		width: 100%;
+		padding-top: 5px;
+		padding-bottom: 45px;
+		display: flex;
+		justify-content: space-between;
+}
+
+.loggingform__remember-label{
+		padding-left: 30px;
+		display: flex;
+		align-items: center;
+		position: relative;
+}
+
+.loggingform__remember-input {
+		width: 25px;
+		height: 25px;
+		position: absolute;
+		left: -5px;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+}
+
+.loggingform__remember--checkbox--icon {
+		display: flex;
+		align-items: center;
+		position: absolute;
+		left: 0;
+}
+
+.loggingform__remember--checkbox--icon {
+		scale: 1.75;
+}
+
+.loggingform__remember-label,
+.loggingform__forgot-password-link {
+		font-size: 18px;
+}

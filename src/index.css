@@ -1,0 +1,58 @@
+
+@font-face {
+  font-family: 'Bebas_Neue_Pro_Bold';
+  src: local('Bebas_Neue_Pro_Bold'),
+  url('fonts/Bebas_Neue_Pro_Bold.otf') format('truetype');
+  font-weight: bold;
+}
+.Bebas_Neue_Pro_Bold{
+  font-family: 'Bebas_Neue_Pro_Bold';
+}
+
+@font-face {
+  font-family: 'PPPangramSans-Bold';
+  src: local('PPPangramSans-Bold'),
+  url('fonts/PPPangramSans-Bold.otf') format('truetype');
+  font-weight: bold;
+}
+.PPPangramSans-Bold{
+  font-family: 'PPPangramSans-Bold';
+}
+
+@font-face {
+  font-family: 'PPPangramSans-Medium';
+  src: local('PPPangramSans-Medium'),
+  url('fonts/PPPangramSans-Medium.otf') format('truetype');
+  font-weight: normal;
+}
+.PPPangramSans-Medium{
+  font-family: 'PPPangramSans-Medium';
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li{
+  margin: 0;
+  padding: 0;
+}
+
+p{
+  margin: 0;
+}
+
+button{
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+

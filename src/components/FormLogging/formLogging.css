@@ -1,0 +1,71 @@
+.loggingform__wrapper{
+  width: 680px;
+  min-height: 350px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.loggingform__title{
+  font-size: 27px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.loggingform{
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loggingform__email-wrapper,
+.loggingform__pass-wrapper{
+  padding-bottom: 25px;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.loggingform__pass-wrapper{
+  padding-bottom: 40px;
+}
+
+.loggingform__email-label,
+.loggingform__pass-label{
+  padding-bottom: 10px;
+  font-size: 22px;
+}
+
+.loggingform__email-input,
+.loggingform__pass-input{
+  min-width: 300px;
+  min-height: 35px;
+  padding-left: 5px;
+  font-size: 20px;
+  border-radius: 7px;
+  border: none;
+  box-shadow:0 0 2px 2px #1136;
+}
+
+.loggingform__submit{
+  width: 150px;
+  padding-top: 2px;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 21px;
+  letter-spacing: 1px;
+  line-height: 25px;
+  border-radius: 7px;
+  box-shadow:0 0 2px 2px #1136;
+}
+
+.loggingform__email-err,
+.loggingform__pass-err{
+  padding-top: 5px;
+  padding-left: 5px;
+  font-size: 20px;
+  color: tomato;
+
+}

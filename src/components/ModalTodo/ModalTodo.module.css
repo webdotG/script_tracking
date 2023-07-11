@@ -1,0 +1,70 @@
+
+.modal-todo__wrapper {
+		width: 100vw;
+		height: 100vh;
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba(0, 0, 0, 0.75);
+		font-size: 21px;
+		opacity: 0;
+		transition: 0.2s;
+		pointer-events: none;
+}
+
+.modal-todo__wrapper.active {
+		opacity: 1;
+		pointer-events: all;
+}
+
+.modal-todo {
+		padding: 25px;
+		height: 400px;
+		width: 500px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		position: relative;
+		border-radius: 17px;
+		background-color: white;
+}
+
+.modal-todo__check-label {
+		height: 25px;
+		padding-top: 33px;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		font-size: 25px;
+}
+
+.modal-todo__check-input {
+		width: 30px;
+		height: 30px;
+}
+
+.modal-todo__email-wrapper{
+		min-height: 100px;
+		width: 100%;
+		padding-left: 30px;
+		padding-right: 30px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+}
+
+
+.modal-todo__btn-close {
+		position: absolute;
+		top: 30px;
+		right: 25px;
+}
+
+.modal-todo__btn-close {
+		scale: 3;
+}
