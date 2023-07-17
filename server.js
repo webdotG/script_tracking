@@ -33,19 +33,25 @@ app.post('/rooms', (req, res) => {
 		console.log('app post done')
 		console.log('json rooms list :', rooms)
 })
+const messages = [];
+const sendMessage = (messsage) => sock.emit('MESSAGE', JSON.stringify(messsage))  
 
 app.post('/message', (req, res) =>{
-		console.log('получение с post MESSAGE', req.body)
-		sock.emit('MESSAGE', JSON.stringify(req.body))
-		res.json(' post for /message socket emit done')
+	const message = req.body;
+	console.log('получение с post MESSAGE', message)
+	sendMessage(message)
+	messages.push(message)
+	res.json(' post for /message socket emit done')
 })
+
 
 io.on('connection', (socket) => {
 		console.log('user connected socket id :', socket.id)
 		socket.on('ROOM:JOIN', ({roomId}) => {
-				console.log(`пришёл сокет запрос ROOM:JOIN, с клиента получены дынные : ${roomId}`)
-				socket.join({roomId})
-				sock = socket
+			console.log(`пришёл сокет запрос ROOM:JOIN, с клиента получены дынные : ${roomId}`)
+			socket.join({roomId})
+			messages.forEach(sendMessage)
+			sock = socket
 		});
 })
 

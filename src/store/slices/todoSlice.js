@@ -1,65 +1,126 @@
 import {createSlice} from "@reduxjs/toolkit";
-// import {v1 as uuidv1} from "uuid";
 
 
 const initialState = {
-		list: [],
+		//list: [],
+		list: [{
+			"id":3,
+			"datetime": "str(datetime.now()",
+			"name": "aaaa",
+			"action": "action",
+			"status": false,
+			"last_log": "log",
+			 "value":"some titldlkflsdfksdffsdkjflksdje"
+	},
+	{
+		"id":1,
+		"datetime": "str(datetime.now()",
+		"name": "bbbbb",
+		"action": "action",
+		"status": true,
+		"last_log": "log",
+		 "value":"some titldlkflsdfksdffsdkjflksdje"
+},
+{
+	"id":5,
+	"datetime": "str(datetime.now()",
+	"name": "bababab",
+	"action": "action",
+	"status": false,
+	"last_log": "log",
+	 "value":"some titldlkflsdfksdffsdkjflksdje"
+},
+],
 		filteredList: null,
 }
+
+
 
 const todoSlice = createSlice({
 		name: 'todo',
 		initialState,
 		reducers: {
 				addTodo(state, action) {
-						if (action.payload.value) {
-								state.list = [...state.list, {
+					const existedIndex = state.list.findIndex( (item) => {
+							return item.id === action.payload.id
+					})
+					if (existedIndex !== -1) {
+						state.list = state.list.map((item, index) => {
+								if ( existedIndex === index) {
+									return {
 										id: action.payload.id,
 										datetime: action.payload.datetime,
+										name: action.payload.name,
 										title: action.payload.name,
 										status: action.payload.success,// false || true
 										last_log: action.payload.last_log,
 										value: action.payload.value
-								}]
-						}
-				},
-				deleteTodo(state, action) {
-						state.list = state.list.filter(item => item.id !== action.payload.id);
-				},
-				saveTodo(state, action) {
-						if (action.payload.id !== undefined) {
-								state.list = state.list.map(item => {
-										if (item.id === action.payload.id) {
-												item.title = action.payload.value;
-										}
-										return item;
-								})
-						}
-				},
-				statusTodo(state, action,) {
-						state.list = state.list.map(item => {
-								if (item.id === action.payload.id) {
-										item.status = !item.status;
-										console.log(`элемент найден задача закрыта/открыта ${item.id} ${item.status}`);
-								}
-								return item;
+									} 
+								} 
+								return item
 						})
+					} else {
+						if (action.payload.value) {
+							state.list = [...state.list, {
+									id: action.payload.id,
+									datetime: action.payload.datetime,
+									name: action.payload.name,
+									title: action.payload.name,
+									status: action.payload.success,// false || true
+									last_log: action.payload.last_log,
+									value: action.payload.value
+							}]
+					}
+				}
+			},
+				searchTodo(state, action) {
+					if (!action.payload) {
+						 state.filteredList = state.list
+					}
+					state.filteredList = state.list.filter((data) =>
+						data.name.toLowerCase().includes(action.payload.toLowerCase()
+						)
+					)
 				},
 				todoFilters(state, action) {
-						if (action.payload.status === 'all') {
-								state.filteredList = null
-						} else {
-								state.filteredList = state.list.filter(item => item.status === action.payload.status)
-						}
-				},
+					console.log('ACTION :', action)
+					if (action.payload.status === 'all') {
+							state.filteredList = null
+					} else {
+							state.filteredList = state.list.filter(item => item.status === action.payload.status)
+					}
+			},
 		},
-
 })
-export const {addTodo, deleteTodo, saveTodo, editTodo, statusTodo, todoFilters} = todoSlice.actions
+export const {addTodo, todoFilters, searchTodo} = todoSlice.actions
 
 
 export default todoSlice.reducer
 
+
+// deleteTodo(state, action) {
+				// 		state.list = state.list.filter(item => item.id !== action.payload.id);
+				// },
+				// saveTodo(state, action) {
+				// 		if (action.payload.id !== undefined) {
+				// 				state.list = state.list.map(item => {
+				// 						if (item.id === action.payload.id) {
+				// 								item.title = action.payload.value;
+				// 						}
+				// 						return item;
+				// 				})
+				// 		}
+				// },
+				// statusTodo(state, action,) {
+				// 		state.list = state.list.map(item => {
+				// 				if (item.id === action.payload.id) {
+				// 						item.status = !item.status;
+				// 						console.log(`элемент найден задача закрыта/открыта ${item.id} ${item.status}`);
+				// 				}
+				// 				return item;
+				// 		})
+				// },
+				
 
 //
 // //функция для фильтрации задач по статусу

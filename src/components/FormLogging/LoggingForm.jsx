@@ -1,4 +1,3 @@
-
 import Paper from '@mui/material/Paper';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
@@ -55,7 +54,6 @@ function LoggingForm({ onLogin }) {
 				navigate('/')
 			} else {
 				const response = await axios.post('/rooms', { emailInput })//`${process.env.REACT_APP_API_URL}
-				console.log(response, emailInput)
 				if (response.status === 200) {
 					const data = response.data
 					console.log('Ответ с сервера : ', data)
