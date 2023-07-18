@@ -94,6 +94,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 		},
 	},
 }));
+
+//================================================================================
+
 const isEmail = (email) => /[a-z0-9]+@mons.ru/.test(email) //^(.+)@(.+)\.(.+)$
 
 
